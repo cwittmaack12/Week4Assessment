@@ -38,7 +38,7 @@ module.exports = {
     deletePlayer: (req,res) => {
         const {id} = req.params;
         const playersToDelete = players.findIndex((playersObj) => playersObj.id === parseInt(id));
-        players.splice(playersToDelete, -1, 1);
+        players.splice(playersToDelete, 1);
         res.status(200).send({message: "Deleted", players})
     },
 
