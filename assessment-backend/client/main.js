@@ -61,13 +61,20 @@ addBtn.addEventListener('submit', addPlayer)
 
 const identifier = document.querySelector('.id')
 const newName = document.querySelector('.edit-input')
+const editForm = document.querySelector('.button5')
 
 const editPlayer = (evt) => {
     evt.preventDefault();
-    let editName =  
-    axios.put(`http://localhost:4000/api/players/:id${identifier}`,{pname: newName} ) 
-    .then(response => {})
+    let id = document.querySelector('.ed').value;
+    let newName = documen.querySelector('.edit-input').value;
+    axios.put(`http://localhost:4000/api/players/${id}`,
+        {players: newName})
+            .then( res => {
+                console.log(res);
+            }) 
+            .catch ( err => console.log(res))
 }
+editForm.addEventListener('submit', editPlayer)
 
 
 
