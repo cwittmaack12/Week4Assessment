@@ -37,7 +37,7 @@ factsBtn.addEventListener('click', getFacts)
 const playerBtn = document.querySelector('.delete_input')
 
 const deletePlayer = () => {
-    axios.delete(`http://localhost:4000/api/players/:id${playerBtn}`)
+    axios.delete(`http://localhost:4000/api/players/${playerBtn}`)
     .then(response => {
         console.log(response);
         console.log(res.data)})
